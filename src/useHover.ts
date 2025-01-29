@@ -2,12 +2,12 @@ import { useState, useRef, useEffect } from 'react';
 
 interface UseHoverResult {
   hovered: boolean;
-  ref: React.RefObject<HTMLElement>;
+  ref: React.RefObject<HTMLElement | null>;
 }
 
 export function useHover(): UseHoverResult {
-  const [hovered, setHovered] = useState(false);
-  const ref = useRef(null);
+  const [hovered, setHovered] = useState<boolean>(false);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const node = ref.current;
