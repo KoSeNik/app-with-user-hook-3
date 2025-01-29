@@ -5,8 +5,10 @@ function App() {
   const { hovered, ref } = useHover();
 
   return (
-    <div ref={ref}>
-      {hovered ? "На меня навели мышку" : "Наведи мышкой на меня"}
+    <div className="container">
+      <div ref={ref} className={`box ${hovered ? "hovered" : ""}`}>
+        {hovered ? "На меня навели мышку" : "Наведи мышкой на меня"}
+      </div>
     </div>
   );
 }
